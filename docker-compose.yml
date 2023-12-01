@@ -4,10 +4,13 @@ services:
   wppconnect:
     build:
       context: .
+    environment:
+      - PORT=${PORT}
+      - DEPLOYMENT_NUMBER=${DEPLOYMENT_NUMBER}
     volumes:
-      - ./wppconnect_tokens:/usr/src/wpp-server/tokens
+      - ./wppconnect_tokens/server-${DEPLOYMENT_NUMBER}:/usr/src/wpp-server/tokens
     ports:
-      - "21465:21465"
+      - "${PORT}:${PORT}"
 
 volumes:
   wppconnect_tokens: {}      
