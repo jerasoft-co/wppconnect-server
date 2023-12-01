@@ -8,12 +8,6 @@ services:
       - ./wppconnect_tokens:/usr/src/wpp-server/tokens
     ports:
       - "21465:21465"
-  secret-generator:
-    build:
-      context: ./secret_generator
-    volumes:
-      - ./src/config.ts:/usr/src/wpp-server/src/config.ts  # Mount the config folder for updating config.ts
-    command: /bin/sh -c "/usr/src/wpp-server/secret_generator.sh"
 
 volumes:
   wppconnect_tokens: {}      
