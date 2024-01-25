@@ -17,6 +17,13 @@ generated_secret=$(openssl rand -hex 32)
 # transform generated_secret to uppercase
 secret_key=$(echo $generated_secret | tr '[:lower:]' '[:upper:]')
 
+if ! grep -q "THISISMYSECURETOKEN" src/config.ts
+then
+  echo "Error: THISISMYSECURETOKEN not found in src/config.ts"
+  exit 1
+fi
+
+
 sed -i "s/THISISMYSECURETOKEN/${secret_key}/g" src/config.ts
 
 

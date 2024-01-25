@@ -106,6 +106,10 @@
     "typescript": "^5.3.3",
     "webpack-cli": "^5.1.4"
   },
+  "resolutions": {
+    "@wppconnect-team/wppconnect/sharp": "^0.32.6",
+    "@wppconnect-team/wppconnect/@types/sharp": "^0.31.1"
+  },
   "peerDependencies": {
     "crypto-js": "^4.2.0",
     "mongoose": "^8.1.0",
