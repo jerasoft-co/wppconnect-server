@@ -93,6 +93,16 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 ```
 
+### Troubleshooting
+ If you encounter installation issues, please try the procedures below
+ . Error Sharp Runtime
+```sh
+    yarn add sharp
+    npm install --include=optional sharp
+    //or
+    yarn add sharp --ignore-engines
+```
+
 ## Run Server
 
 ```sh
@@ -250,7 +260,7 @@ To generate an access token, you must use your `SECRET_KEY`.
 Using the route:
 
 ```shell
-  curl -X POST --location "http://localhost:21465/api/mySession/eUsouSeCreTo/generate-token"
+  curl -X POST --location "http://localhost:21465/api/mySession/THISISMYSECURETOKEN/generate-token"
 ```
 
 ### Response:
@@ -299,7 +309,7 @@ curl -X POST --location "http://localhost:21465/api/mySession/send-message" \
     -H "Accept: application/json" \
     -H "Authorization: Bearer \$2b\$10\$8aQFQxnWREtBEMZK_iHMe.u7NeoNkjL7s6NYai_83Pb31Ycss6Igm" \
     -d "{
-          \"phone\": \"5511982743910\",
+          \"phone\": \"5511900000000\",
           \"message\": \"*Abner* Rodrigues\"
         }"
 ```
