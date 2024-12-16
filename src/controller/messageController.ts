@@ -51,6 +51,7 @@ export async function sendMessage(req: Request, res: Response) {
               phone: { type: "string" },
               isGroup: { type: "boolean" },
               isNewsletter: { type: "boolean" },
+              isLid: { type: "boolean" },
               message: { type: "string" },
               options: { type: "object" },
             }
@@ -61,7 +62,20 @@ export async function sendMessage(req: Request, res: Response) {
                 phone: '5521999999999',
                 isGroup: false,
                 isNewsletter: false,
+                isLid: false,
                 message: 'Hi from WPPConnect',
+              }
+            },
+            "Send message with reply": {
+              value: { 
+                phone: '5521999999999',
+                isGroup: false,
+                isNewsletter: false,
+                isLid: false,
+                message: 'Hi from WPPConnect with reply',
+                options: {
+                  quotedMsg: 'true_...@c.us_3EB01DE65ACC6_out',
+                }
               }
             },
             "Send message to group": {
@@ -162,6 +176,7 @@ export async function sendFile(req: Request, res: Response) {
                     "phone": { type: "string" },
                     "isGroup": { type: "boolean" },
                     "isNewsletter": { type: "boolean" },
+                    "isLid": { type: "boolean" },
                     "filename": { type: "string" },
                     "caption": { type: "string" },
                     "base64": { type: "string" }
@@ -173,6 +188,7 @@ export async function sendFile(req: Request, res: Response) {
                         "phone": "5521999999999",
                         "isGroup": false,
                         "isNewsletter": false,
+                        "isLid": false,
                         "filename": "file name lol",
                         "caption": "caption for my file",
                         "base64": "<base64> string"
@@ -879,10 +895,10 @@ export async function sendMentioned(req: Request, res: Response) {
       examples: {
         "Default": {
           value: {
-            "phone": "5521999999999",
+            "phone": "groupId@g.us",
             "isGroup": true,
             "message": "Your text message",
-            "mentioned": ["@556593077171@c.us"]
+            "mentioned": ["556593077171@c.us"]
           }
         }
       }

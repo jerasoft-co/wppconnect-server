@@ -602,6 +602,9 @@
                   "isNewsletter": {
                     "type": "boolean"
                   },
+                  "isLid": {
+                    "type": "boolean"
+                  },
                   "message": {
                     "type": "string"
                   },
@@ -616,7 +619,20 @@
                     "phone": "5521999999999",
                     "isGroup": false,
                     "isNewsletter": false,
+                    "isLid": false,
                     "message": "Hi from WPPConnect"
+                  }
+                },
+                "Send message with reply": {
+                  "value": {
+                    "phone": "5521999999999",
+                    "isGroup": false,
+                    "isNewsletter": false,
+                    "isLid": false,
+                    "message": "Hi from WPPConnect with reply",
+                    "options": {
+                      "quotedMsg": "true_...@c.us_3EB01DE65ACC6_out"
+                    }
                   }
                 },
                 "Send message to group": {
@@ -732,6 +748,9 @@
                   "isNewsletter": {
                     "type": "boolean"
                   },
+                  "isLid": {
+                    "type": "boolean"
+                  },
                   "filename": {
                     "type": "string"
                   },
@@ -749,6 +768,7 @@
                     "phone": "5521999999999",
                     "isGroup": false,
                     "isNewsletter": false,
+                    "isLid": false,
                     "filename": "file name lol",
                     "caption": "caption for my file",
                     "base64": "<base64> string"
@@ -987,6 +1007,9 @@
                   "isNewsletter": {
                     "type": "boolean"
                   },
+                  "isLid": {
+                    "type": "boolean"
+                  },
                   "filename": {
                     "type": "string"
                   },
@@ -1004,6 +1027,7 @@
                     "phone": "5521999999999",
                     "isGroup": false,
                     "isNewsletter": false,
+                    "isLid": false,
                     "filename": "file name lol",
                     "caption": "caption for my file",
                     "base64": "<base64> string"
@@ -1059,6 +1083,9 @@
                   "isNewsletter": {
                     "type": "boolean"
                   },
+                  "isLid": {
+                    "type": "boolean"
+                  },
                   "filename": {
                     "type": "string"
                   },
@@ -1076,6 +1103,7 @@
                     "phone": "5521999999999",
                     "isGroup": false,
                     "isNewsletter": false,
+                    "isLid": false,
                     "filename": "file name lol",
                     "caption": "caption for my file",
                     "base64": "<base64> string"
@@ -1484,10 +1512,10 @@
               "examples": {
                 "Default": {
                   "value": {
-                    "phone": "5521999999999",
+                    "phone": "groupId@g.us",
                     "isGroup": true,
                     "message": "Your text message",
-                    "mentioned": ["@556593077171@c.us"]
+                    "mentioned": ["556593077171@c.us"]
                   }
                 }
               }
@@ -4006,7 +4034,15 @@
                 }
               },
               "examples": {
-                "Default": {
+                "Delete message to all": {
+                  "value": {
+                    "phone": "5521999999999",
+                    "isGroup": false,
+                    "messageId": "<messageId>",
+                    "deleteMediaInDevice": true
+                  }
+                },
+                "Delete message only me": {
                   "value": {
                     "phone": "5521999999999",
                     "isGroup": false,
