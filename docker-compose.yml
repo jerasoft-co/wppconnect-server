@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     build:
       context: .
+    image: jerasoft-jerasoft-co-wppconnect-server-wppconnect-fs0scs8w:jerasoft-jerasoft-co-wppconnect-server-wppconnect-fs0scs8w
     volumes:
       - ./config.ts:/usr/src/wpp-server/config.ts
       - ./wppconnect_tokens:/usr/src/wpp-server/tokens
@@ -13,4 +14,4 @@ services:
       - "21465:21465"
 
 volumes:
-  wppconnect_tokens: {}      
+  wppconnect_tokens: {}
